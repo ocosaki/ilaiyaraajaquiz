@@ -4,8 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Which Ilaiyaraaja Song Are You? | OruCupOxygen</title>
-<meta property="og:title" content="Which Ilaiyaraaja Song Are You?">
-<meta property="og:description" content="Ilaiyaraaja has composed thousands of songs. 7 questions to find which one is yours. Powered by OruCupOxygen.">
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://ilaiyaraaja.orucupoxygen.com"/>
+<meta property="og:title" content="Which Ilaiyaraaja Song Are You? | Oru Cup Oxygen"/>
+<meta property="og:description" content="Ilaiyaraaja has composed thousands of songs. Which one are you?"/>
+<meta property="og:image" content="https://raw.githubusercontent.com/ocosaki/website/main/whichIlaiyaraaja.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Which Ilaiyaraaja Song Are You? | Oru Cup Oxygen"/>
+<meta name="twitter:description" content="Ilaiyaraaja has composed thousands of songs. Which one are you?"/>
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ocosaki/website/main/whichIlaiyaraaja.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -142,6 +149,69 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
 .share-btn{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;border:none;border-radius:3px;padding:16px 36px;font-family:'DM Sans',sans-serif;font-weight:500;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;width:100%;max-width:420px;margin-bottom:12px;box-shadow:0 4px 20px rgba(37,211,102,0.2)}
 .retry-btn{background:transparent;border:1px solid rgba(255,255,255,0.12);border-radius:3px;padding:14px 36px;color:rgba(255,255,255,0.35);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;width:100%;max-width:420px;letter-spacing:1px}
 
+
+/* ── INTERSTITIAL ── */
+#screen-interstitial {
+  background: #0e0a14;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 48px 28px;
+}
+.inter-finding {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 48px;
+  letter-spacing: 0.02em;
+}
+.inter-body {
+  max-width: 320px;
+  margin: 0 auto;
+}
+.inter-copy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.inter-copy-sub {
+  font-size: 14px;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 40px;
+}
+.inter-oco-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.inter-oco-logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 0 28px rgba(201,147,42,0.18);
+}
+.inter-oco-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.inter-oco-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.5px;
+}
+
 /* ── MUTE BUTTON ── */
 .mute-btn{
   position:fixed;bottom:24px;right:24px;
@@ -227,28 +297,19 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
   <div class="options-list" id="options-list"></div>
 </div>
 
-<!-- TRANSITION -->
-<div class="screen" id="screen-transition">
-  <div class="notes-canvas" id="notes-dark"></div>
-  <img class="t-logo" src="ilaiyaraaja-bg.jpg" alt="OruCupOxygen">
-  <div class="t-title">Finding your song...</div>
-  <div class="t-sub">Ilaiyaraaja has composed thousands.<br>Only one is yours.</div>
-</div>
-
-<!-- OCO INTERSTITIAL -->
-<div class="screen" id="screen-oco">
-  <div class="notes-canvas" id="notes-oco"></div>
-  <img class="oco-inter-logo" src="ilaiyaraaja-bg.jpg" alt="OruCupOxygen">
-  <div class="oco-inter-eyebrow">Introducing</div>
-  <div class="oco-inter-title">Oru Cup Oxygen</div>
-  <div class="oco-inter-divider"></div>
-  <p style="font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(255,255,255,0.7);line-height:1.6;max-width:300px;margin:0 auto 28px;">An easy routine for mental wellness.</p>
-  <div class="oco-inter-pills">
-    <div class="oco-inter-pill"><span>✗</span>No Scroll</div>
-    <div class="oco-inter-pill"><span>✗</span>No Video</div>
-    <div class="oco-inter-pill"><span>✗</span>No Ads</div>
+<!-- INTERSTITIAL -->
+<div class="screen" id="screen-interstitial">
+  <div class="notes-canvas" id="notes-inter"></div>
+  <div class="inter-finding">Finding your music<span id="inter-dots">...</span></div>
+  <div class="inter-body">
+    <p class="inter-copy">By the way, Ilaiyaraaja and Oru Cup Oxygen have a lot in common.</p>
+    <p class="inter-copy inter-copy-sub">Freshness, Variety, Rasanai... ipdi neraya irukku. Try panni paarunga.</p>
+    <div class="inter-oco-block">
+      <img class="inter-oco-logo" src="ilaiyaraaja-bg.jpg" alt="Oru Cup Oxygen"/>
+      <div class="inter-oco-name">Oru Cup Oxygen</div>
+      <div class="inter-oco-tagline">an easy mental wellness routine, in தமிழ்</div>
+    </div>
   </div>
-  <div class="oco-inter-continue">Revealing your song ···</div>
 </div>
 
 <!-- RESULT -->
@@ -265,24 +326,18 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
   <div class="r-swatch" id="r-swatch"></div>
   <div class="r-desc-card">
     <div class="r-desc" id="r-desc"></div>
+    <div class="r-desc r-oco-fused" id="r-oco"></div>
+    <div class="r-desc r-oco-fused" style="border-top:none;padding-top:4px;margin-top:0;color:rgba(255,255,255,0.65);">Try it out today.</div>
   </div>
-  <div class="oco-card">
-    <img class="oco-logo-sm" src="ilaiyaraaja-bg.jpg" alt="OCO">
-    <div>
-      <div class="oco-label">OruCupOxygen</div>
-      <div class="oco-body" id="r-oco"></div>
-    </div>
-  </div>
-  <button class="share-btn" onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
   <div class="store-badges">
-    <a class="store-badge" href="#" target="_blank">
+    <a class="store-badge" href="https://www.orucupoxygen.com" target="_blank">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
       <div class="store-badge-text">
         <span class="store-badge-sub">Download on the</span>
         <span class="store-badge-name">App Store</span>
       </div>
     </a>
-    <a class="store-badge" href="#" target="_blank">
+    <a class="store-badge" href="https://www.orucupoxygen.com" target="_blank">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M3.18 23.76c.3.17.64.22.99.14l12.12-6.99-2.54-2.54-10.57 9.39zm-1.81-20.6C1.13 3.55 1 3.96 1 4.44v15.12c0 .48.13.89.37 1.21l.07.06 8.47-8.47v-.2L1.44 3.69l-.07.07zM20.13 10.4l-2.42-1.4-2.83 2.83 2.83 2.83 2.44-1.41c.7-.4.7-1.05-.02-1.85zM4.17.24L16.29 7.23l-2.54 2.54L3.18.38C3.5.3 3.88.07 4.17.24z"/></svg>
       <div class="store-badge-text">
         <span class="store-badge-sub">Get it on</span>
@@ -290,12 +345,290 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
       </div>
     </a>
   </div>
-  <button class="retry-btn" onclick="resetQuiz()">Try Again</button>
+  <button class="share-btn" onclick="shareOnWhatsApp()">📲 Share on WhatsApp</button>
+  <button class="btn-copy-link" id="btn-copy-link" onclick="copyLink()">Copy Link</button>
+  <button class="retry-btn" onclick="resetQuiz()">Play Again</button>
 </div>
 
 <script>
 const SONGS = [{"id": "maanguyile", "name": "Maanguyile Poonguyile", "film": "Karagaattakkaaran", "texture": "The Village Soul", "color": "#7a4a1a", "desc": "You carry something earthy and rooted in you. You find joy in simple, tactile things \u2014 the smell of mud after rain, a meal cooked slowly, a laugh that fills a whole room. You don't need much to feel full. Ilaiyaraaja knew exactly who you are when he composed this one.", "oco": "OruCupOxygen was made for people who know how to be present \u2014 and want to protect that feeling in a world that keeps pulling them away."}, {"id": "pottu", "name": "Pottu Vaitha Kaadhal Thittam", "film": "Singaravelan", "texture": "The Electric Heart", "color": "#8a1a1a", "desc": "You run at a higher voltage than most people. Energy finds you. You're the one who says yes first, feels things loudly, and moves before others have finished thinking. Ilaiyaraaja plugged in the electric guitar for you specifically.", "oco": "OruCupOxygen's Focus stream is designed for minds like yours \u2014 turning that high energy into something sharp and directed, not scattered."}, {"id": "thenpaandi", "name": "Thenpandi Cheemayile", "film": "Nayakan", "texture": "The Quiet Keeper", "color": "#1a4a2e", "desc": "You have a softness that people feel before you even speak. You're the one who remembers birthdays, who notices when someone is off, who makes a place feel safe just by being in it. This song was composed for the people who hold others gently.", "oco": "OruCupOxygen's Sleep stream was built for souls like yours \u2014 to give back the quiet you so generously give to everyone else."}, {"id": "kaadhalin", "name": "Kaadhalin Deepam Ondru", "film": "Thambikku Endha Ooru", "texture": "The Longing One", "color": "#1a2a3d", "desc": "You feel things at a depth most people never reach. Distance, absence, memory \u2014 these are textures you know intimately. You hold onto things longer than you should, and somehow that's also your greatest strength. Ilaiyaraaja composed this in the key of you.", "oco": "OruCupOxygen understands that a restless mind needs a place to land. Our Focus and Sleep streams give your thoughts somewhere quiet to arrive."}, {"id": "ilaiya", "name": "Ilaiya Nilaa Pozhigiradhu", "film": "Payanangal Mudivathillai", "texture": "The Eternal Romantic", "color": "#3a1a5c", "desc": "You find beauty in ordinary moments that others walk past. A certain light, a certain hour, a melody overheard from a distance \u2014 these stop you completely. You're not just nostalgic. You're someone who has genuinely learned to savour. That's rare.", "oco": "OruCupOxygen was designed to help you find more of those moments \u2014 daily audio experiences that remind you what it feels like to be fully here."}, {"id": "paruvame", "name": "Paruvame Puthiya Paadal", "film": "Nenjathai Killaathey", "texture": "The Early Riser", "color": "#7a3a0a", "desc": "You believe in mornings. In fresh starts. In the idea that today can be better than yesterday if you just begin well. You're the one who makes lists, who shows up early, who finds momentum where others find dread. This song was composed at dawn, for you.", "oco": "OruCupOxygen's Focus stream starts your mental engine the right way \u2014 5 minutes every morning to train the attention you already know is your strength."}, {"id": "pani", "name": "Pani Vizhum Malarvanam", "film": "Ninaivellaam Nithya", "texture": "The Contemplative One", "color": "#0a2a4a", "desc": "You live in the in-between spaces. Between sleeping and waking, between knowing and wondering, between what was said and what was meant. You're drawn to complexity \u2014 in music, in people, in ideas. Ilaiyaraaja's most layered melody found the most layered person.", "oco": "OruCupOxygen's audio experiences were built for minds like yours \u2014 layered, attentive, always listening for what's underneath."}, {"id": "sorgame", "name": "Sorgame Endraalum", "film": "Ooru Vittu Ooru Vandhu", "texture": "The Homesick Heart", "color": "#4a3a0a", "desc": "Home means everything to you \u2014 not just a place, but a feeling. A smell, a voice, a particular kind of light through a particular window. You carry your roots everywhere you go. And sometimes, in the middle of an ordinary day, something small makes you ache for where you came from.", "oco": "OruCupOxygen was built with that feeling in mind \u2014 a Tamil space for Tamil minds, wherever in the world you find yourself."}, {"id": "raakkamma", "name": "Raakkamma Kaiya Thattu", "film": "Thalapathi", "texture": "The Life of the Room", "color": "#6a0a0a", "desc": "You don't just attend celebrations \u2014 you create them. Your energy is contagious. People feel lighter when you're around. You know how to make a moment feel like a memory while it's still happening. Ilaiyaraaja composed this for the ones who make others dance.", "oco": "OruCupOxygen wants to make sure that energy stays sustained \u2014 because even the most vibrant minds need real rest and real focus to keep shining."}, {"id": "metti", "name": "Metti Oli Kaatrodu", "film": "Metti", "texture": "The Hidden Gem", "color": "#0a3a1a", "desc": "You notice things others miss. A secondary melody. A face in the background. The meaning behind what wasn't said. You don't need to be obvious to be deep. Like this song \u2014 you reveal yourself slowly, to the right people, at the right time.", "oco": "OruCupOxygen's rarest content is made for listeners like you \u2014 the ones who hear what's underneath. Come find your corner of it."}, {"id": "thenral", "name": "Thenral Vanthu Theendumpothu", "film": "Avatharam", "texture": "The Synesthete", "color": "#5a1a6a", "desc": "You experience the world through more than one sense at a time. Music has colour for you. Mornings have a texture. You don't just listen \u2014 you inhabit sound. Most people hear Ilaiyaraaja. You see him. That is a rare and beautiful way to be alive.", "oco": "OruCupOxygen was made for people who experience the world this deeply \u2014 audio that doesn't just play, but opens something inside you."}, {"id": "eniniya", "name": "En Iniya Pon Nilaave", "film": "Moodu Pani", "texture": "The Intimate One", "color": "#1a3a4a", "desc": "You are most yourself in small, private moments. A fire. A guitar. Someone close. You don't need an audience \u2014 you need depth. The kind of connection that doesn't require explanation. Ilaiyaraaja composed this beside a fireplace, for people who understand that warmth is not just temperature.", "oco": "OruCupOxygen's Sleep stream was designed for exactly this \u2014 intimate, quiet audio that meets you where you actually are."}, {"id": "andhi", "name": "Andhi Mazhai Pozhigirathu", "film": "Rajapaarvai", "texture": "The Sensory Soul", "color": "#2a4a1a", "desc": "You explore the world through all your senses, not just your eyes. You notice the sound of an evening before you see it. You feel the texture of a conversation. You know that beauty isn't always visible \u2014 sometimes it arrives as a fragrance, a breeze, the right silence at the right moment.", "oco": "OruCupOxygen creates audio experiences for people who truly listen. You were always going to find us."}, {"id": "idhu", "name": "Idhu Oru Ponmalai", "film": "Nizhalgal", "texture": "The Nature Poet", "color": "#2a5a1a", "desc": "You stop for sunsets. You notice the exact shade of sky before rain. You find language inadequate for what you feel standing in nature \u2014 and yet you try anyway. You are someone for whom beauty is not decoration but necessity. Ilaiyaraaja composed this evening song knowing you exist.", "oco": "OruCupOxygen's Explore stream was built for people like you \u2014 stories and sounds that open the world rather than shrink it."}, {"id": "senthaazham", "name": "Senthaazham Poovil", "film": "Mullum Malarum", "texture": "The Free Spirit", "color": "#3a5a0a", "desc": "You feel most alive when there's a horizon in front of you \u2014 a winding road, a hill, an open sky. You carry lightness with you. You don't need things to be resolved to enjoy them. Like this song, you are at your best when you are simply moving through something beautiful.", "oco": "OruCupOxygen's Focus stream moves with you \u2014 audio that travels as well as you do, keeping your mind as open as the road."}];
-const QUESTIONS = [{"text": "It is raining outside. What are you doing?", "options": [{"text": "Sitting by the window, doing nothing, just watching it.", "w": {"ilaiya": 3, "pani": 2, "thenpaandi": 1}}, {"text": "Making chai and calling someone I haven't spoken to in a while.", "w": {"sorgame": 3, "thenpaandi": 2, "maanguyile": 1}}, {"text": "Putting on music loud and dancing around the house.", "w": {"raakkamma": 3, "pottu": 2, "paruvame": 1}}, {"text": "Writing something \u2014 a note, a thought, a message I may never send.", "w": {"kaadhalin": 3, "metti": 2, "pani": 1}}]}, {"text": "Which hour of the day feels most like you?", "options": [{"text": "Early morning, before anyone else is awake.", "w": {"paruvame": 3, "senthaazham": 2, "maanguyile": 1}}, {"text": "That golden hour just before sunset.", "w": {"ilaiya": 3, "idhu": 2, "andhi": 2, "kaadhalin": 1}}, {"text": "Late night, when the world has gone quiet.", "w": {"metti": 3, "eniniya": 2, "pani": 2, "kaadhalin": 1}}, {"text": "Noon \u2014 when everything is bright and in full swing.", "w": {"raakkamma": 3, "pottu": 2, "paruvame": 1}}]}, {"text": "An old photograph falls out of a book. What do you do?", "options": [{"text": "Sit with it for a long time. Feel the weight of it.", "w": {"sorgame": 3, "kaadhalin": 2, "ilaiya": 1}}, {"text": "Smile, put it somewhere safe, and carry on.", "w": {"maanguyile": 3, "thenpaandi": 2, "paruvame": 1}}, {"text": "Send it to whoever is in it. Make it a moment.", "w": {"raakkamma": 3, "pottu": 2, "thenpaandi": 1}}, {"text": "Study every detail \u2014 what's in the background, what nobody noticed.", "w": {"metti": 3, "andhi": 2, "pani": 1}}]}, {"text": "How do you feel in a room full of people you don't know?", "options": [{"text": "Alive. I'll know three of them well before the evening ends.", "w": {"raakkamma": 3, "pottu": 2, "paruvame": 1}}, {"text": "Fine, but I'm scanning for the one interesting person.", "w": {"metti": 3, "pani": 2, "kaadhalin": 1}}, {"text": "Quietly okay. I find my corner and observe.", "w": {"thenpaandi": 3, "ilaiya": 2, "andhi": 1}}, {"text": "A little homesick, honestly.", "w": {"sorgame": 3, "kaadhalin": 2, "eniniya": 1}}]}, {"text": "A piece of music makes you stop walking. Why?", "options": [{"text": "A melody so pure it feels like it was always inside you.", "w": {"ilaiya": 3, "thenpaandi": 2, "sorgame": 1}}, {"text": "A rhythm that moves your body before your mind catches up.", "w": {"pottu": 3, "raakkamma": 2, "maanguyile": 1}}, {"text": "The lyrics convey something beautiful.", "w": {"kaadhalin": 3, "idhu": 2, "senthaazham": 1}}, {"text": "A feeling you thought only you had, somehow made into sound.", "w": {"thenral": 3, "andhi": 2, "metti": 1}}]}, {"text": "What does a perfect Sunday look like?", "options": [{"text": "Up early, a long walk, something productive done by noon.", "w": {"paruvame": 3, "senthaazham": 2, "maanguyile": 1}}, {"text": "Slow morning, long lunch, a nap that goes on too long.", "w": {"thenpaandi": 3, "sorgame": 2, "ilaiya": 1}}, {"text": "Friends, food, laughter \u2014 the kind of day you talk about for years.", "w": {"raakkamma": 3, "maanguyile": 2, "pottu": 1}}, {"text": "Alone with something I love \u2014 a book, music, my own thoughts.", "w": {"metti": 3, "eniniya": 2, "pani": 1}}]}, {"text": "Someone asks what you want most right now. You say:", "options": [{"text": "To feel at home. Wherever that is.", "w": {"sorgame": 3, "thenpaandi": 2, "maanguyile": 1}}, {"text": "More hours in the day. I have things to do.", "w": {"paruvame": 3, "pottu": 2, "raakkamma": 1}}, {"text": "A moment that lasts. One that I actually feel while it's happening.", "w": {"ilaiya": 3, "thenral": 2, "andhi": 1}}, {"text": "Stillness. Real stillness. Just for a little while.", "w": {"pani": 3, "eniniya": 2, "thenpaandi": 1}}]}];
+const QUESTIONS = [
+  {
+    "text": "It is raining outside. What are you doing?",
+    "options": [
+      {
+        "text": "Sitting by the window, doing nothing, just watching it.",
+        "w": {
+          "thenpaandi": 1,
+          "ilaiya": 3,
+          "pani": 2,
+          "andhi": 2
+        }
+      },
+      {
+        "text": "Making chai and calling someone I haven't spoken to in a while.",
+        "w": {
+          "maanguyile": 1,
+          "thenpaandi": 2,
+          "sorgame": 3
+        }
+      },
+      {
+        "text": "Putting on music loud and dancing around the house.",
+        "w": {
+          "pottu": 3,
+          "paruvame": 1,
+          "raakkamma": 2
+        }
+      },
+      {
+        "text": "Writing something \\u2014 a note, a thought, a message I may never send.",
+        "w": {
+          "kaadhalin": 3,
+          "pani": 1,
+          "metti": 2,
+          "thenral": 2
+        }
+      }
+    ]
+  },
+  {
+    "text": "Which hour of the day feels most like you?",
+    "options": [
+      {
+        "text": "Early morning, before anyone else is awake.",
+        "w": {
+          "maanguyile": 1,
+          "paruvame": 3,
+          "senthaazham": 2
+        }
+      },
+      {
+        "text": "That golden hour just before sunset.",
+        "w": {
+          "kaadhalin": 1,
+          "ilaiya": 2,
+          "andhi": 2,
+          "idhu": 2
+        }
+      },
+      {
+        "text": "Late night, when the world has gone quiet.",
+        "w": {
+          "kaadhalin": 1,
+          "pani": 3,
+          "metti": 2,
+          "eniniya": 2
+        }
+      },
+      {
+        "text": "Noon \\u2014 when everything is bright and in full swing.",
+        "w": {
+          "pottu": 2,
+          "paruvame": 1,
+          "senthaazham": 3
+        }
+      }
+    ]
+  },
+  {
+    "text": "An old photograph falls out of a book. What do you do?",
+    "options": [
+      {
+        "text": "Sit with it for a long time. Feel the weight of it.",
+        "w": {
+          "kaadhalin": 2,
+          "ilaiya": 1,
+          "sorgame": 2
+        }
+      },
+      {
+        "text": "Smile, put it somewhere safe, and carry on.",
+        "w": {
+          "maanguyile": 3,
+          "thenpaandi": 2,
+          "paruvame": 1
+        }
+      },
+      {
+        "text": "Send it to whoever is in it. Make it a moment.",
+        "w": {
+          "pottu": 2,
+          "thenpaandi": 1,
+          "raakkamma": 3,
+          "eniniya": 1,
+          "idhu": 1
+        }
+      },
+      {
+        "text": "Study every detail \\u2014 what's in the background, what nobody noticed.",
+        "w": {
+          "pani": 1,
+          "metti": 3,
+          "andhi": 2
+        }
+      }
+    ]
+  },
+  {
+    "text": "How do you feel in a room full of people you don't know?",
+    "options": [
+      {
+        "text": "Alive. I'll know three of them well before the evening ends.",
+        "w": {
+          "paruvame": 1,
+          "raakkamma": 3,
+          "thenral": 2,
+          "senthaazham": 3
+        }
+      },
+      {
+        "text": "Fine, but I'm scanning for the one interesting person.",
+        "w": {
+          "kaadhalin": 1,
+          "pani": 2,
+          "metti": 2
+        }
+      },
+      {
+        "text": "Quietly okay. I find my corner and observe.",
+        "w": {
+          "thenpaandi": 3,
+          "ilaiya": 2,
+          "andhi": 1
+        }
+      },
+      {
+        "text": "A little homesick, honestly.",
+        "w": {
+          "kaadhalin": 2,
+          "sorgame": 3,
+          "eniniya": 1
+        }
+      }
+    ]
+  },
+  {
+    "text": "A piece of music makes you stop walking. Why?",
+    "options": [
+      {
+        "text": "A melody so pure it feels like it was always inside you.",
+        "w": {
+          "thenpaandi": 2,
+          "ilaiya": 3,
+          "sorgame": 1,
+          "thenral": 1
+        }
+      },
+      {
+        "text": "A rhythm that moves your body before your mind catches up.",
+        "w": {
+          "maanguyile": 1,
+          "pottu": 3,
+          "raakkamma": 2
+        }
+      },
+      {
+        "text": "The lyrics convey something beautiful.",
+        "w": {
+          "kaadhalin": 3,
+          "eniniya": 3,
+          "andhi": 1,
+          "idhu": 2,
+          "senthaazham": 1
+        }
+      },
+      {
+        "text": "A feeling you thought only you had, somehow made into sound.",
+        "w": {
+          "metti": 1,
+          "thenral": 3,
+          "andhi": 2
+        }
+      }
+    ]
+  },
+  {
+    "text": "What does a perfect Sunday look like?",
+    "options": [
+      {
+        "text": "Up early, a long walk, something productive done by noon.",
+        "w": {
+          "maanguyile": 1,
+          "paruvame": 3,
+          "pani": 1,
+          "senthaazham": 2
+        }
+      },
+      {
+        "text": "Slow morning, long lunch, a nap that goes on too long.",
+        "w": {
+          "ilaiya": 1,
+          "sorgame": 1,
+          "thenral": 2,
+          "senthaazham": 1
+        }
+      },
+      {
+        "text": "Friends, food, laughter \\u2014 the kind of day you talk about for years.",
+        "w": {
+          "maanguyile": 3,
+          "pottu": 1,
+          "idhu": 3
+        }
+      },
+      {
+        "text": "Alone with something I love \\u2014 a book, music, my own thoughts.",
+        "w": {
+          "pani": 1,
+          "metti": 3,
+          "thenral": 1,
+          "eniniya": 2
+        }
+      }
+    ]
+  },
+  {
+    "text": "Someone asks what you want most right now. You say:",
+    "options": [
+      {
+        "text": "To feel at home. Wherever that is.",
+        "w": {
+          "maanguyile": 1,
+          "thenpaandi": 2,
+          "sorgame": 3
+        }
+      },
+      {
+        "text": "More hours in the day. I have things to do.",
+        "w": {
+          "pottu": 2,
+          "paruvame": 3,
+          "raakkamma": 1,
+          "senthaazham": 1
+        }
+      },
+      {
+        "text": "A moment that lasts. One that I actually feel while it's happening.",
+        "w": {
+          "ilaiya": 1,
+          "thenral": 2,
+          "andhi": 1,
+          "idhu": 2
+        }
+      },
+      {
+        "text": "Stillness. Real stillness. Just for a little while.",
+        "w": {
+          "thenpaandi": 1,
+          "pani": 3,
+          "eniniya": 2
+        }
+      }
+    ]
+  }
+];
+
 const songMap = {};
 SONGS.forEach(s => songMap[s.id] = s);
 
@@ -368,7 +701,7 @@ function show(id) {
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
 
-  const darkScreens = ['screen-transition','screen-result'];
+  const darkScreens = ['screen-interstitial','screen-result'];
   const lightScreens = ['screen-intro','screen-quiz'];
 
   document.body.classList.remove('sketch-light','sketch-dark');
@@ -423,9 +756,19 @@ function selectOption(btn, weights) {
 }
 
 function showTransition() {
-  show('screen-transition');
-  setTimeout(() => show('screen-oco'), 2400);
-  setTimeout(showResult, 5200);
+  show('screen-interstitial');
+  animateDots();
+  setTimeout(showResult, 7500);
+}
+
+function animateDots() {
+  var d = 0;
+  var el = document.getElementById('inter-dots');
+  var iv = setInterval(function() {
+    d = (d + 1) % 4;
+    if (el) el.textContent = '.'.repeat(d + 1);
+  }, 500);
+  setTimeout(function() { clearInterval(iv); }, 7500);
 }
 
 function showResult() {
@@ -443,8 +786,17 @@ function showResult() {
 function shareOnWhatsApp() {
   const name = document.getElementById('r-name').textContent;
   const texture = document.getElementById('r-texture').textContent;
-  const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nIlaiyaraaja has composed thousands of songs. This quiz finds which one is yours.\n\nTake it here 👇\nwhich-cricketer-are-you.netlify.app\n\n(Powered by OruCupOxygen — Tamil wellness app)`;
+  const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nIlaiyaraaja has composed thousands of songs. This quiz finds which one is yours.\n\nTake it here 👇\nilaiyaraaja.orucupoxygen.com\n\n(Powered by OruCupOxygen — Tamil wellness app)`;
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+}
+
+
+function copyLink() {
+  navigator.clipboard.writeText('https://ilaiyaraaja.orucupoxygen.com').then(function() {
+    var btn = document.getElementById('btn-copy-link');
+    btn.textContent = 'Link Copied!';
+    setTimeout(function() { btn.textContent = 'Copy Link'; }, 2000);
+  });
 }
 
 function resetQuiz() { show('screen-intro'); }
