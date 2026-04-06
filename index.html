@@ -644,7 +644,6 @@ let bgmStarted = false;
 function startBGM() {
   if (!bgmStarted) {
     bgm.volume = 0.35;
-    bgm.load();
     bgm.play().catch(function(e) { console.log('BGM error:', e); });
     bgmStarted = true;
   }
@@ -716,6 +715,7 @@ function show(id) {
 }
 
 function startQuiz() {
+  startBGM();
   currentQ = 0;
   scores = {};
   SONGS.forEach(s => scores[s.id] = 0);
