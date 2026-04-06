@@ -263,7 +263,7 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
 <div class="sketch-bg" id="sketch-bg"></div>
 
 <!-- BGM -->
-<audio id="bgm" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bgm.mp3" loop preload="none"></audio>
+<audio id="bgm" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bgm.mp3" loop preload="metadata"></audio>
 <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Toggle music">♪</button>
 
 <!-- INTRO -->
@@ -644,7 +644,8 @@ let bgmStarted = false;
 function startBGM() {
   if (!bgmStarted) {
     bgm.volume = 0.35;
-    bgm.play().catch(() => {});
+    bgm.load();
+    bgm.play().catch(function(e) { console.log('BGM error:', e); });
     bgmStarted = true;
   }
 }
