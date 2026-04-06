@@ -786,7 +786,7 @@ function showResult() {
 function shareOnWhatsApp() {
   const name = document.getElementById('r-name').textContent;
   const texture = document.getElementById('r-texture').textContent;
-  const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nIlaiyaraaja has composed thousands of songs. This quiz finds which one is yours.\n\nTake it here 👇\nilaiyaraaja.orucupoxygen.com\n\n(Powered by OruCupOxygen — Tamil wellness app)`;
+  const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nhttps://ilaiyaraaja.orucupoxygen.com`;
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
 }
 
