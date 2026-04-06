@@ -263,7 +263,9 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
 <div class="sketch-bg" id="sketch-bg"></div>
 
 <!-- BGM -->
-<audio id="bgm" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bgm.mp3" loop preload="metadata"></audio>
+<audio id="bgm" loop preload="auto">
+  <source src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bgm.mp3" type="audio/mp3">
+</audio></audio>
 <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Toggle music">♪</button>
 
 <!-- INTRO -->
@@ -657,8 +659,7 @@ function toggleMute() {
 }
 
 // Start on first user interaction anywhere
-document.addEventListener('click', startBGM, { once: true });
-document.addEventListener('touchstart', startBGM, { once: true });
+
 const NOTE_CHARS = ['♩','♪','♫','♬','𝄞','𝄢','♭','♮','♯'];
 
 function spawnNotes(containerId, dark) {
