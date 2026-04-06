@@ -717,6 +717,7 @@ function show(id) {
 
 function startQuiz() {
   startBGM();
+  gtag('event', 'quiz_start', { event_category: 'Ilaiyaraaja Quiz' });
   currentQ = 0;
   scores = {};
   SONGS.forEach(s => scores[s.id] = 0);
@@ -750,6 +751,7 @@ function renderQuestion() {
 function selectOption(btn, weights) {
   document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
+  gtag('event', 'question_answered', { event_category: 'Ilaiyaraaja Quiz', event_label: 'Question ' + (currentQ + 1) });
   setTimeout(() => {
     Object.entries(weights).forEach(([id,w]) => { scores[id] = (scores[id]||0) + w });
     currentQ++;
@@ -783,12 +785,14 @@ function showResult() {
   document.getElementById('r-swatch').style.background = song.color;
   document.getElementById('r-desc').textContent = song.desc;
   document.getElementById('r-oco').textContent = song.oco;
+  gtag('event', 'quiz_result', { event_category: 'Ilaiyaraaja Quiz', event_label: song.name });
   show('screen-result');
 }
 
 function shareOnWhatsApp() {
   const name = document.getElementById('r-name').textContent;
   const texture = document.getElementById('r-texture').textContent;
+  gtag('event', 'share_whatsapp', { event_category: 'Ilaiyaraaja Quiz', event_label: name });
   const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nhttps://ilaiyaraaja.orucupoxygen.com`;
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
 }
