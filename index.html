@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Which 80's Song Are You? | OruCupOxygen</title>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content="https://ilaiyaraaja.orucupoxygen.com"/>
+<meta property="og:url" content="https://80smusic.orucupoxygen.com"/>
 <meta property="og:title" content="Which 80's Song Are You? | Oru Cup Oxygen"/>
 <meta property="og:description" content="Thousands of songs. Which one are you?"/>
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/WhichIlaiyaraaja.jpeg"/>
@@ -810,13 +810,13 @@ function shareOnWhatsApp() {
   const name = document.getElementById('r-name').textContent;
   const texture = document.getElementById('r-texture').textContent;
   gtag('event', 'share_whatsapp', { event_category: '80s Music Quiz', event_label: name });
-  const msg = `🎵 I just found out which 80's song I am — "${name}" (${texture}).\n\nhttps://ilaiyaraaja.orucupoxygen.com`;
+  const msg = `🎵 I just found out which 80's song I am — "${name}" (${texture}).\n\nhttps://80smusic.orucupoxygen.com`;
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
 }
 
 
 function copyLink() {
-  navigator.clipboard.writeText('https://ilaiyaraaja.orucupoxygen.com').then(function() {
+  navigator.clipboard.writeText('https://80smusic.orucupoxygen.com').then(function() {
     var btn = document.getElementById('btn-copy-link');
     btn.textContent = 'Link Copied!';
     setTimeout(function() { btn.textContent = 'Copy Link'; }, 2000);
