@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Which Ilaiyaraaja Song Are You? | OruCupOxygen</title>
+<title>Which 80's Song Are You? | OruCupOxygen</title>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://ilaiyaraaja.orucupoxygen.com"/>
-<meta property="og:title" content="Which Ilaiyaraaja Song Are You? | Oru Cup Oxygen"/>
-<meta property="og:description" content="Ilaiyaraaja has composed thousands of songs. Which one are you?"/>
+<meta property="og:title" content="Which 80's Song Are You? | Oru Cup Oxygen"/>
+<meta property="og:description" content="Thousands of songs. Which one are you?"/>
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/WhichIlaiyaraaja.jpeg"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Which Ilaiyaraaja Song Are You? | Oru Cup Oxygen"/>
-<meta name="twitter:description" content="Ilaiyaraaja has composed thousands of songs. Which one are you?"/>
+<meta name="twitter:title" content="Which 80's Song Are You? | Oru Cup Oxygen"/>
+<meta name="twitter:description" content="Thousands of songs. Which one are you?"/>
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/WhichIlaiyaraaja.jpeg"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -268,17 +268,31 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
 </audio></audio>
 <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Toggle music">♪</button>
 
+<!-- MESSAGE GATE -->
+<div class="screen active" id="screen-gate">
+  <div class="notes-canvas" id="notes-gate"></div>
+  <div class="logo-wrap">
+    <img class="logo-img" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bg.jpg" alt="OruCupOxygen">
+    <span class="logo-text">OruCupOxygen</span>
+  </div>
+  <div class="intro-eyebrow">A Note Before You Begin</div>
+  <div class="intro-divider"></div>
+  <p class="intro-tagline" style="max-width:320px;font-size:17px;line-height:1.75;text-align:center;margin-bottom:32px;">Mothalla intha quizkku avar peru thaan vechirundhom. Aana delete panna sonnaanga. Intha title lernthu avar perai edukkalaam. Manasulernthu avar paattai edukka mudiyumaa? Athaan 80's music nu perai maathirukkom.</p>
+  <p class="intro-tagline" style="max-width:320px;font-size:15px;font-style:normal;color:rgba(14,10,20,0.5);line-height:1.7;text-align:center;margin-bottom:40px;">Nadula yaar vanthaalum, avarukkkum namakkum irukkura bandham maarrapporadhilla.</p>
+  <button class="btn-start" onclick="showIntro()">Please continue to the quiz →</button>
+</div>
+
 <!-- INTRO -->
-<div class="screen active" id="screen-intro">
+<div class="screen" id="screen-intro">
   <div class="notes-canvas" id="notes-light"></div>
   <div class="logo-wrap">
     <img class="logo-img" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bg.jpg" alt="OruCupOxygen">
     <span class="logo-text">OruCupOxygen</span>
   </div>
   <div class="intro-eyebrow">A Personality Quiz</div>
-  <h1 class="intro-title">Which<br><em>Ilaiyaraaja</em><br>Song Are You?</h1>
+  <h1 class="intro-title">Which<br><em>80's Song</em><br>Are You?</h1>
   <div class="intro-divider"></div>
-  <p class="intro-tagline">Ilaiyaraaja has composed thousands of songs. Which one are you?</p>
+  <p class="intro-tagline">Thousands of songs. Which one are you?</p>
   <p class="intro-sub">7 questions · No music knowledge needed</p>
   <button class="btn-start" onclick="startQuiz()">Begin →</button>
 </div>
@@ -305,7 +319,7 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
   <div class="notes-canvas" id="notes-inter"></div>
   <div class="inter-finding">Finding your music<span id="inter-dots">...</span></div>
   <div class="inter-body">
-    <p class="inter-copy">By the way, Ilaiyaraaja and Oru Cup Oxygen have a lot in common.</p>
+    <p class="inter-copy">By the way, this music and Oru Cup Oxygen have a lot in common.</p>
     <p class="inter-copy inter-copy-sub">Freshness, Variety, Rasanai... ipdi neraya irukku. Try panni paarunga.</p>
     <div class="inter-oco-block">
       <img class="inter-oco-logo" src="https://cdn.jsdelivr.net/gh/ocosaki/ilaiyaraajaquiz@main/ilaiyaraaja-bg.jpg" alt="Oru Cup Oxygen"/>
@@ -354,7 +368,7 @@ body.sketch-dark .sketch-bg { opacity:0.04; filter:invert(1); }
 </div>
 
 <script>
-const SONGS = [{"id": "maanguyile", "name": "Maanguyile Poonguyile", "film": "Karagaattakkaaran", "texture": "The Village Soul", "color": "#7a4a1a", "desc": "You carry something earthy and rooted in you. You find joy in simple, tactile things — the smell of mud after rain, a meal cooked slowly, a laugh that fills a whole room. You don't need much to feel full. Ilaiyaraaja knew exactly who you are when he composed this one.", "oco": "OruCupOxygen was made for people who know how to be present — and want to protect that feeling in a world that keeps pulling them away."}, {"id": "pottu", "name": "Pottu Vaitha Kaadhal Thittam", "film": "Singaravelan", "texture": "The Electric Heart", "color": "#8a1a1a", "desc": "You run at a higher voltage than most people. Energy finds you. You're the one who says yes first, feels things loudly, and moves before others have finished thinking. Ilaiyaraaja plugged in the electric guitar for you specifically.", "oco": "OruCupOxygen's Focus stream is designed for minds like yours — turning that high energy into something sharp and directed, not scattered."}, {"id": "thenpaandi", "name": "Thenpandi Cheemayile", "film": "Nayakan", "texture": "The Quiet Keeper", "color": "#1a4a2e", "desc": "You have a softness that people feel before you even speak. You're the one who remembers birthdays, who notices when someone is off, who makes a place feel safe just by being in it. This song was composed for the people who hold others gently.", "oco": "OruCupOxygen's Sleep stream was built for souls like yours — to give back the quiet you so generously give to everyone else."}, {"id": "kaadhalin", "name": "Kaadhalin Deepam Ondru", "film": "Thambikku Endha Ooru", "texture": "The Longing One", "color": "#1a2a3d", "desc": "You feel things at a depth most people never reach. Distance, absence, memory — these are textures you know intimately. You hold onto things longer than you should, and somehow that's also your greatest strength. Ilaiyaraaja composed this in the key of you.", "oco": "OruCupOxygen understands that a restless mind needs a place to land. Our Focus and Sleep streams give your thoughts somewhere quiet to arrive."}, {"id": "ilaiya", "name": "Ilaiya Nilaa Pozhigiradhu", "film": "Payanangal Mudivathillai", "texture": "The Eternal Romantic", "color": "#3a1a5c", "desc": "You find beauty in ordinary moments that others walk past. A certain light, a certain hour, a melody overheard from a distance — these stop you completely. You're not just nostalgic. You're someone who has genuinely learned to savour. That's rare.", "oco": "OruCupOxygen was designed to help you find more of those moments — daily audio experiences that remind you what it feels like to be fully here."}, {"id": "paruvame", "name": "Paruvame Puthiya Paadal", "film": "Nenjathai Killaathey", "texture": "The Early Riser", "color": "#7a3a0a", "desc": "You believe in mornings. In fresh starts. In the idea that today can be better than yesterday if you just begin well. You're the one who makes lists, who shows up early, who finds momentum where others find dread. This song was composed at dawn, for you.", "oco": "OruCupOxygen's Focus stream starts your mental engine the right way — 5 minutes every morning to train the attention you already know is your strength."}, {"id": "pani", "name": "Pani Vizhum Malarvanam", "film": "Ninaivellaam Nithya", "texture": "The Contemplative One", "color": "#0a2a4a", "desc": "You live in the in-between spaces. Between sleeping and waking, between knowing and wondering, between what was said and what was meant. You're drawn to complexity — in music, in people, in ideas. Ilaiyaraaja's most layered melody found the most layered person.", "oco": "OruCupOxygen's audio experiences were built for minds like yours — layered, attentive, always listening for what's underneath."}, {"id": "sorgame", "name": "Sorgame Endraalum", "film": "Ooru Vittu Ooru Vandhu", "texture": "The Homesick Heart", "color": "#4a3a0a", "desc": "Home means everything to you — not just a place, but a feeling. A smell, a voice, a particular kind of light through a particular window. You carry your roots everywhere you go. And sometimes, in the middle of an ordinary day, something small makes you ache for where you came from.", "oco": "OruCupOxygen was built with that feeling in mind — a Tamil space for Tamil minds, wherever in the world you find yourself."}, {"id": "raakkamma", "name": "Raakkamma Kaiya Thattu", "film": "Thalapathi", "texture": "The Life of the Room", "color": "#6a0a0a", "desc": "You don't just attend celebrations — you create them. Your energy is contagious. People feel lighter when you're around. You know how to make a moment feel like a memory while it's still happening. Ilaiyaraaja composed this for the ones who make others dance.", "oco": "OruCupOxygen wants to make sure that energy stays sustained — because even the most vibrant minds need real rest and real focus to keep shining."}, {"id": "metti", "name": "Metti Oli Kaatrodu", "film": "Metti", "texture": "The Hidden Gem", "color": "#0a3a1a", "desc": "You notice things others miss. A secondary melody. A face in the background. The meaning behind what wasn't said. You don't need to be obvious to be deep. Like this song — you reveal yourself slowly, to the right people, at the right time.", "oco": "OruCupOxygen's rarest content is made for listeners like you — the ones who hear what's underneath. Come find your corner of it."}, {"id": "thenral", "name": "Thenral Vanthu Theendumpothu", "film": "Avatharam", "texture": "The Synesthete", "color": "#5a1a6a", "desc": "You experience the world through more than one sense at a time. Music has colour for you. Mornings have a texture. You don't just listen — you inhabit sound. Most people hear Ilaiyaraaja. You see him. That is a rare and beautiful way to be alive.", "oco": "OruCupOxygen was made for people who experience the world this deeply — audio that doesn't just play, but opens something inside you."}, {"id": "eniniya", "name": "En Iniya Pon Nilaave", "film": "Moodu Pani", "texture": "The Intimate One", "color": "#1a3a4a", "desc": "You are most yourself in small, private moments. A fire. A guitar. Someone close. You don't need an audience — you need depth. The kind of connection that doesn't require explanation. Ilaiyaraaja composed this beside a fireplace, for people who understand that warmth is not just temperature.", "oco": "OruCupOxygen's Sleep stream was designed for exactly this — intimate, quiet audio that meets you where you actually are."}, {"id": "andhi", "name": "Andhi Mazhai Pozhigirathu", "film": "Rajapaarvai", "texture": "The Sensory Soul", "color": "#2a4a1a", "desc": "You explore the world through all your senses, not just your eyes. You notice the sound of an evening before you see it. You feel the texture of a conversation. You know that beauty isn't always visible — sometimes it arrives as a fragrance, a breeze, the right silence at the right moment.", "oco": "OruCupOxygen creates audio experiences for people who truly listen. You were always going to find us."}, {"id": "idhu", "name": "Idhu Oru Ponmalai", "film": "Nizhalgal", "texture": "The Nature Poet", "color": "#2a5a1a", "desc": "You stop for sunsets. You notice the exact shade of sky before rain. You find language inadequate for what you feel standing in nature — and yet you try anyway. You are someone for whom beauty is not decoration but necessity. Ilaiyaraaja composed this evening song knowing you exist.", "oco": "OruCupOxygen's Explore stream was built for people like you — stories and sounds that open the world rather than shrink it."}, {"id": "senthaazham", "name": "Senthaazham Poovil", "film": "Mullum Malarum", "texture": "The Free Spirit", "color": "#3a5a0a", "desc": "You feel most alive when there's a horizon in front of you — a winding road, a hill, an open sky. You carry lightness with you. You don't need things to be resolved to enjoy them. Like this song, you are at your best when you are simply moving through something beautiful.", "oco": "OruCupOxygen's Focus stream moves with you — audio that travels as well as you do, keeping your mind as open as the road."}];
+const SONGS = [{"id": "maanguyile", "name": "Maanguyile Poonguyile", "film": "Karagaattakkaaran", "texture": "The Village Soul", "color": "#7a4a1a", "desc": "You carry something earthy and rooted in you. You find joy in simple, tactile things — the smell of mud after rain, a meal cooked slowly, a laugh that fills a whole room. You don't need much to feel full. This song knew exactly who you are.", "oco": "OruCupOxygen was made for people who know how to be present — and want to protect that feeling in a world that keeps pulling them away."}, {"id": "pottu", "name": "Pottu Vaitha Kaadhal Thittam", "film": "Singaravelan", "texture": "The Electric Heart", "color": "#8a1a1a", "desc": "You run at a higher voltage than most people. Energy finds you. You're the one who says yes first, feels things loudly, and moves before others have finished thinking. The electric guitar in this song was plugged in for you specifically.", "oco": "OruCupOxygen's Focus stream is designed for minds like yours — turning that high energy into something sharp and directed, not scattered."}, {"id": "thenpaandi", "name": "Thenpandi Cheemayile", "film": "Nayakan", "texture": "The Quiet Keeper", "color": "#1a4a2e", "desc": "You have a softness that people feel before you even speak. You're the one who remembers birthdays, who notices when someone is off, who makes a place feel safe just by being in it. This song was composed for the people who hold others gently.", "oco": "OruCupOxygen's Sleep stream was built for souls like yours — to give back the quiet you so generously give to everyone else."}, {"id": "kaadhalin", "name": "Kaadhalin Deepam Ondru", "film": "Thambikku Endha Ooru", "texture": "The Longing One", "color": "#1a2a3d", "desc": "You feel things at a depth most people never reach. Distance, absence, memory — these are textures you know intimately. You hold onto things longer than you should, and somehow that's also your greatest strength. This one was composed in the key of you.", "oco": "OruCupOxygen understands that a restless mind needs a place to land. Our Focus and Sleep streams give your thoughts somewhere quiet to arrive."}, {"id": "ilaiya", "name": "Ilaiya Nilaa Pozhigiradhu", "film": "Payanangal Mudivathillai", "texture": "The Eternal Romantic", "color": "#3a1a5c", "desc": "You find beauty in ordinary moments that others walk past. A certain light, a certain hour, a melody overheard from a distance — these stop you completely. You're not just nostalgic. You're someone who has genuinely learned to savour. That's rare.", "oco": "OruCupOxygen was designed to help you find more of those moments — daily audio experiences that remind you what it feels like to be fully here."}, {"id": "paruvame", "name": "Paruvame Puthiya Paadal", "film": "Nenjathai Killaathey", "texture": "The Early Riser", "color": "#7a3a0a", "desc": "You believe in mornings. In fresh starts. In the idea that today can be better than yesterday if you just begin well. You're the one who makes lists, who shows up early, who finds momentum where others find dread. This song was composed at dawn, for you.", "oco": "OruCupOxygen's Focus stream starts your mental engine the right way — 5 minutes every morning to train the attention you already know is your strength."}, {"id": "pani", "name": "Pani Vizhum Malarvanam", "film": "Ninaivellaam Nithya", "texture": "The Contemplative One", "color": "#0a2a4a", "desc": "You live in the in-between spaces. Between sleeping and waking, between knowing and wondering, between what was said and what was meant. You're drawn to complexity — in music, in people, in ideas. The most layered melody found the most layered person.", "oco": "OruCupOxygen's audio experiences were built for minds like yours — layered, attentive, always listening for what's underneath."}, {"id": "sorgame", "name": "Sorgame Endraalum", "film": "Ooru Vittu Ooru Vandhu", "texture": "The Homesick Heart", "color": "#4a3a0a", "desc": "Home means everything to you — not just a place, but a feeling. A smell, a voice, a particular kind of light through a particular window. You carry your roots everywhere you go. And sometimes, in the middle of an ordinary day, something small makes you ache for where you came from.", "oco": "OruCupOxygen was built with that feeling in mind — a Tamil space for Tamil minds, wherever in the world you find yourself."}, {"id": "raakkamma", "name": "Raakkamma Kaiya Thattu", "film": "Thalapathi", "texture": "The Life of the Room", "color": "#6a0a0a", "desc": "You don't just attend celebrations — you create them. Your energy is contagious. People feel lighter when you're around. You know how to make a moment feel like a memory while it's still happening. This song was composed for the ones who make others dance.", "oco": "OruCupOxygen wants to make sure that energy stays sustained — because even the most vibrant minds need real rest and real focus to keep shining."}, {"id": "metti", "name": "Metti Oli Kaatrodu", "film": "Metti", "texture": "The Hidden Gem", "color": "#0a3a1a", "desc": "You notice things others miss. A secondary melody. A face in the background. The meaning behind what wasn't said. You don't need to be obvious to be deep. Like this song — you reveal yourself slowly, to the right people, at the right time.", "oco": "OruCupOxygen's rarest content is made for listeners like you — the ones who hear what's underneath. Come find your corner of it."}, {"id": "thenral", "name": "Thenral Vanthu Theendumpothu", "film": "Avatharam", "texture": "The Synesthete", "color": "#5a1a6a", "desc": "You experience the world through more than one sense at a time. Music has colour for you. Mornings have a texture. You don't just listen — you inhabit sound. Most people hear this music. You see it. That is a rare and beautiful way to be alive.", "oco": "OruCupOxygen was made for people who experience the world this deeply — audio that doesn't just play, but opens something inside you."}, {"id": "eniniya", "name": "En Iniya Pon Nilaave", "film": "Moodu Pani", "texture": "The Intimate One", "color": "#1a3a4a", "desc": "You are most yourself in small, private moments. A fire. A guitar. Someone close. You don't need an audience — you need depth. The kind of connection that doesn't require explanation. This one was composed beside a fireplace, for people who understand that warmth is not just temperature.", "oco": "OruCupOxygen's Sleep stream was designed for exactly this — intimate, quiet audio that meets you where you actually are."}, {"id": "andhi", "name": "Andhi Mazhai Pozhigirathu", "film": "Rajapaarvai", "texture": "The Sensory Soul", "color": "#2a4a1a", "desc": "You explore the world through all your senses, not just your eyes. You notice the sound of an evening before you see it. You feel the texture of a conversation. You know that beauty isn't always visible — sometimes it arrives as a fragrance, a breeze, the right silence at the right moment.", "oco": "OruCupOxygen creates audio experiences for people who truly listen. You were always going to find us."}, {"id": "idhu", "name": "Idhu Oru Ponmalai", "film": "Nizhalgal", "texture": "The Nature Poet", "color": "#2a5a1a", "desc": "You stop for sunsets. You notice the exact shade of sky before rain. You find language inadequate for what you feel standing in nature — and yet you try anyway. You are someone for whom beauty is not decoration but necessity. This evening song was composed knowing you exist.", "oco": "OruCupOxygen's Explore stream was built for people like you — stories and sounds that open the world rather than shrink it."}, {"id": "senthaazham", "name": "Senthaazham Poovil", "film": "Mullum Malarum", "texture": "The Free Spirit", "color": "#3a5a0a", "desc": "You feel most alive when there's a horizon in front of you — a winding road, a hill, an open sky. You carry lightness with you. You don't need things to be resolved to enjoy them. Like this song, you are at your best when you are simply moving through something beautiful.", "oco": "OruCupOxygen's Focus stream moves with you — audio that travels as well as you do, keeping your mind as open as the road."}];
 const QUESTIONS = [
   {
     "text": "It is raining outside. What are you doing?",
@@ -691,6 +705,7 @@ function spawnNotes(containerId, dark) {
 }
 
 // spawn notes on all screens
+spawnNotes('notes-gate', false);
 spawnNotes('notes-light', false);
 spawnNotes('notes-quiz', false);
 spawnNotes('notes-dark', true);
@@ -704,7 +719,7 @@ function show(id) {
   window.scrollTo(0,0);
 
   const darkScreens = ['screen-interstitial','screen-result'];
-  const lightScreens = ['screen-intro','screen-quiz'];
+  const lightScreens = ['screen-gate','screen-intro','screen-quiz'];
 
   document.body.classList.remove('sketch-light','sketch-dark');
 
@@ -715,9 +730,11 @@ function show(id) {
   }
 }
 
+function showIntro() { show('screen-intro'); }
+
 function startQuiz() {
   startBGM();
-  gtag('event', 'quiz_start', { event_category: 'Ilaiyaraaja Quiz' });
+  gtag('event', 'quiz_start', { event_category: '80s Music Quiz' });
   currentQ = 0;
   scores = {};
   SONGS.forEach(s => scores[s.id] = 0);
@@ -751,7 +768,7 @@ function renderQuestion() {
 function selectOption(btn, weights) {
   document.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
-  gtag('event', 'question_answered', { event_category: 'Ilaiyaraaja Quiz', event_label: 'Question ' + (currentQ + 1) });
+  gtag('event', 'question_answered', { event_category: '80s Music Quiz', event_label: 'Question ' + (currentQ + 1) });
   setTimeout(() => {
     Object.entries(weights).forEach(([id,w]) => { scores[id] = (scores[id]||0) + w });
     currentQ++;
@@ -785,15 +802,15 @@ function showResult() {
   document.getElementById('r-swatch').style.background = song.color;
   document.getElementById('r-desc').textContent = song.desc;
   document.getElementById('r-oco').textContent = song.oco;
-  gtag('event', 'quiz_result', { event_category: 'Ilaiyaraaja Quiz', event_label: song.name });
+  gtag('event', 'quiz_result', { event_category: '80s Music Quiz', event_label: song.name });
   show('screen-result');
 }
 
 function shareOnWhatsApp() {
   const name = document.getElementById('r-name').textContent;
   const texture = document.getElementById('r-texture').textContent;
-  gtag('event', 'share_whatsapp', { event_category: 'Ilaiyaraaja Quiz', event_label: name });
-  const msg = `🎵 I just found out which Ilaiyaraaja song I am — "${name}" (${texture}).\n\nhttps://ilaiyaraaja.orucupoxygen.com`;
+  gtag('event', 'share_whatsapp', { event_category: '80s Music Quiz', event_label: name });
+  const msg = `🎵 I just found out which 80's song I am — "${name}" (${texture}).\n\nhttps://ilaiyaraaja.orucupoxygen.com`;
   window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
 }
 
@@ -806,7 +823,7 @@ function copyLink() {
   });
 }
 
-function resetQuiz() { show('screen-intro'); }
+function resetQuiz() { show('screen-gate'); }
 </script>
 </body>
 </html>
